@@ -1,0 +1,6 @@
+*.o
+*.exe
+*.win
+*.debug
+*.layout
+*.bookmarks

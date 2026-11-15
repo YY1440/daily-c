@@ -2773,6 +2773,474 @@ int main()
 //	}
 //}
 
+//void xixi(char* arr)
+//{
+//	int len = strlen(arr);
+//	while(arr[len - 1] == '\r' || arr[len - 1] == '\n')
+//	{
+//		arr[len - 1] = '\0';
+//	}
+//}
+//
+//int main()
+//{
+//	char arr0[] = {"gcc\n"};
+//	char arr1[] = {"cyy\r\n"};
+//	char arr2[] = {"wyx\r"};
+//	
+//	xixi(arr0);
+//	xixi(arr1);
+//	xixi(arr2);
+//	
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr[] = {"3.1415926"};
+//	int i = 0,j = 1,sum = 0;
+//	float sum0 = 0.0f;
+//	int flag = 0;
+//	int len = strlen(arr);
+//	
+//	while(1)
+//	{
+//		if(arr[i] != '.' && flag == 0)
+//		{
+//			int num = arr[i] - '0';
+//			sum += num*pow(10,i);
+//			i++;
+//		}
+//		else if(arr[i] == '.')
+//		{
+//			i++;
+//			flag = 1;
+//		}
+//		else
+//		{
+//			int num0 = arr[i] - '0';
+//			sum0 += num0 / (float)pow(10,j);
+//			j++;
+//		}
+//		
+//		if(i == len)
+//		{
+//			break;
+//		}
+//	}
+//	
+//	float rel = sum + sum0;
+//	printf("%f",rel);
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr[] = {"3.1415926"};
+//	int i = 0,flag = 0,sum = 0;
+//	float weight = 0.1f,sum0 = 0.0f;
+//	int len = strlen(arr);
+//	
+//	while(1)
+//	{
+//		if(i == len) break;
+//		
+//		if(arr[i] == '.') 
+//		{
+//			flag = 1;
+//			i++;
+//			continue;
+//		}
+//		
+//		int num = arr[i] - '0';
+//		if(flag)
+//		{
+//			sum0 += num*weight;
+//			weight /= 10;
+//		}
+//		else
+//		{
+//			sum = sum*10 + num;
+//		}
+//		
+//		i++;
+//	}
+//	
+//	float rel = (float)sum + sum0;
+//	printf("%.7f",rel);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr1[4][5] = {1,2,3,4,5,2,3,4,5,6,3,4,5,6,7,4,5,6,7,8};
+//	int arr2[5][4] = {0,9,8,7,9,8,7,6,8,7,6,5,7,6,5,4,6,5,4,3};
+//	int arr[4][4] = {0};
+//	
+//	for(int i = 0;i < 4;i++)
+//	{
+//		for(int j = 0;j < 4;j++)
+//		{
+//			for(int k = 0;k < 5;k++)
+//			{
+//				arr[i][j] += arr1[i][k]*arr2[k][j];
+//			}
+//		}
+//	}
+//	
+//	for(int x = 0;x < 4;x++)
+//	{
+//		for(int y = 0;y < 4;y++)
+//		{
+//			printf("%d ",arr[x][y]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = 0;
+//	int arr[100][4] = {0};
+//	scanf("%d",&n);
+//	for(int k = 0;k < n;k++)
+//	{
+//		for(int h = 0;h < 4;h++)
+//		{
+//			scanf("%d",&arr[k][h]);
+//		}
+//	}
+//	
+//	int m = 0;
+//	while(m < n)
+//	{
+//		for(int i = 0;i < 3;i++)
+//		{
+//			for(int j = 0;j < 3 - i;j++)
+//			{
+//				if(arr[m][j] > arr[m][j + 1])
+//				{
+//					int temp = 0;
+//					temp = arr[m][j];
+//					arr[m][j] = arr[m][j + 1];
+//					arr[m][j + 1] = temp;
+//				}
+//			}
+//		}
+//		m++;
+//	}
+//	
+//	for(int x = 0;x < n;x++)
+//	{
+//		for(int y = 0;y < 4;y++)
+//		{
+//			printf("%d ",arr[x][y]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int m = 0,k = 0;
+//	scanf("%d",&m);
+//	int* p = (int*)malloc(m*sizeof(*p));
+//	if(p != NULL)
+//	{
+//		for(k = 0;k < m;k++)
+//		{
+//			scanf("%d",(p + k)); 
+//			if(*(p + k) > 20) 
+//			{
+//				return 1;
+//				free(p);
+//				p = NULL;
+//			}
+//		}
+//	}
+//	else return 1;
+//	
+//	k = 0;
+//	while(k < m)
+//	{
+//		int n = *(p + k);
+//		for(int i = 0;i < n;i++)
+//		{
+//			for(int j = 0;j < i;j++)
+//			{
+//				printf(" ");
+//			}
+//			for(int h = 0;h < 2*n - 1 - 2*i;h++)
+//			{
+//				printf("*");
+//			}
+//			printf("\n");
+//		}
+//		k++;
+//	}
+//	
+//	free(p);
+//	p = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 0,b = 0,c = 0;
+//	
+//	while(scanf("%d,%d,%d",&a,&b,&c) == 3)
+//	{
+//		int delta = b*b - 4*a*c;
+//		if(delta == 0 && a != 0)
+//		{
+//			float x = (float)(-b) / (2*a);
+//			printf("%.2f\n",x);
+//		}
+//		else if(delta > 0 && a != 0)
+//		{
+//			float x1 = (sqrt(delta) - b) / (float)(2*a);
+//			float x2 = (-sqrt(delta) - b) / (float)(2*a);
+//			printf("%.2f %.2f\n",((x1 > x2) ? x1 : x2),((x1 < x2) ? x1 : x2));
+//		}
+//		else if(a == 0 && b != 0)
+//		{
+//			float x0 = (-c) / (float)b;
+//			printf("%.2f\n",x0);
+//		}
+//		else printf("x\n");
+//	}
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//	printf("%d",(n >= 0) ? 1 : 0);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<math.h>
+//
+//int main()
+//{
+//	int a = 0,b = 0,c = 0;
+//	
+//	while(scanf("%d,%d,%d",&a,&b,&c) == 3)
+//	{
+//		int delta = b*b - 4*a*c;
+//		if(delta == 0 && a != 0)
+//		{
+//			float x = (float)(-b) / (2*a);
+//			if(fabs(x) < 1e-8) x = 0.0;
+//			printf("%.2f\n",x);
+//		}
+//		else if(delta > 0 && a != 0)
+//		{
+//			float x1 = (sqrt(delta) - b) / (float)(2*a);
+//			float x2 = (-sqrt(delta) - b) / (float)(2*a);
+//			if(fabs(x1) < 1e-8) x1 = 0.0;
+//			if(fabs(x2) < 1e-8) x2 = 0.0;
+//			printf("%.2f %.2f\n",((x1 > x2) ? x1 : x2),((x1 < x2) ? x1 : x2));
+//		}
+//		else if(a == 0 && b != 0)
+//		{
+//			float x0 = (-c) / (float)b;
+//			if(fabs(x0) < 1e-8) x0 = 0.0;
+//			printf("%.2f\n",x0);
+//		}
+//		else printf("x\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr[100] = {0};
+//	scanf("%s",arr);
+//	int len = strlen(arr);
+//	
+//	int left = 0,right = len - 1;
+//	int flag = 0;
+//	while(left < right)
+//	{
+//		if(arr[left] == arr[right])
+//		{
+//			left++;
+//			right--;
+//		}
+//		else 
+//		{
+//			flag = 1;
+//			break;
+//		}
+//	}
+//	
+//	if(flag) printf("No\n");
+//	else printf("Yes\n");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = 0,count = 0;
+//	scanf("%d",&n);
+//	if(n < 0) return 1;
+//	else if(n == 0)
+//	{
+//		printf("1\n");
+//		return 0;
+//	}
+//	
+//	while(n)
+//	{
+//		if((n & 1) == 0) count++;
+//		n >>= 1;
+//	}
+//	printf("%d",count);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//	int* p = (int*)malloc(3*n*sizeof(*p));
+//	if(p != NULL)
+//	{
+//		for(int k = 0;k < n;k++)
+//		{
+//			for(int h = 0;h < 3;h++)
+//			{
+//				scanf("%d",(p + h + 3*k));
+//				if((*(p + h + 3*k) > 100) || (*(p + h + 3*k) < 1))
+//				{
+//					free(p);
+//					p = NULL;
+//					return 1;
+//				}
+//			}
+//		}
+//		
+//	}
+//	
+//	int j = 0; 
+//	while(j < n)
+//	{
+//		int i = 0,flag = 0;
+//		for(i = 1000;i <= 9999;i++)
+//		{
+//			if((i % *(p + 3*j) == 0) && ((i + 1) % *(p + 1 + 3*j) == 0) && ((i + 2) % *(p + 2 + 3*j) == 0)) 
+//			{
+//				flag = 1;
+//				break;
+//			}
+//		}
+//		j++;
+//		
+//		if(flag) printf("%d\n",i);
+//		else printf("Impossible\n");
+//	}
+//	
+//	free(p);
+//	p = NULL;
+//	return 0;
+//}
+
+//#include<stdio.h>
+//#include<stdlib.h>
+//
+//float calu(int* p,float ave)
+//{
+//	float sum = 0;
+//	for(int i = 0;i < 6;i++)
+//	{
+//		sum += (ave - *(p + i))*(ave - *(p + i));
+//	}
+//	float rel = (float)sum / 6;
+//	if(rel == 0) rel = 0;
+//	return rel;
+//}
+//
+//float average(int* p)
+//{
+//	float sum = 0;
+//	for(int i = 0;i < 6;i++)
+//	{
+//		sum += *(p + i);
+//	}
+//	float rel = (float)sum / 6;
+//	return rel;
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//	
+//	int* p = (int*)malloc(6*n*sizeof(*p));
+//	if(p != NULL)
+//	{
+//		for(int k = 0;k < 6*n;k++)
+//		{
+//			scanf("%d",(p + k));
+//			
+//		}
+//	}
+//	else return 1;
+//	
+//	int h = 0;
+//	while(h < 6*n)
+//	{
+//		float rel = average(p + h);
+//		printf("%.2f ",rel);
+//		
+//		float s = calu((p + h),rel);
+//		printf("%.2f\n",s);
+//		
+//		h += 6;
+//	}
+//	
+//	free(p);
+//	p = NULL;
+//	return 0;
+//}
+
+//int main()
+//{
+//	printf("hello world\n");
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//
+//	int sum = 0;
+//	while(n--)
+//	{
+//		int m = 0;
+//		scanf("%d",&m);
+//		int num = 0;
+//		for(int i = 0;i < m;i++)
+//		{
+//			for(int j = 0;j < m;j++)
+//			{
+//				scanf("%d",&num);
+//				if(i == j) sum += num;
+//				if(i + j == m - 1) sum += num;
+//			}
+//		}
+//		printf("%d\n",sum);
+//	}
+//	return 0;
+//}
+
 int main()
 {
 	

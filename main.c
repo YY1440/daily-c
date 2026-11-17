@@ -3241,8 +3241,114 @@ int main()
 //	return 0;
 //}
 
-int main()
-{
-	
-	return 0;
-}
+//#include<stdio.h>
+//#include<string.h>
+//
+//int main()
+//{
+//	char arr1[11] = {0};
+//	char arr2[11] = {0};
+//	scanf("%s%s",arr1,arr2);
+//	
+//	int len1 = strlen(arr1);
+//	int len2 = strlen(arr2);
+//	if(len1 > 10 || len2 > 10) return 1;
+//	
+//	int a[11] = {0};
+//	int b[11] = {0};
+//	for(int i = 0;i < len1;i++)
+//	{
+//		a[i] = arr1[len1 - 1 - i] - '0';
+//	}
+//	for(int i = 0;i < len2;i++)
+//	{
+//		b[i] = arr2[len2 - 1 - i] - '0';
+//	}
+//	
+//	int c[22] = {0};
+//	for(int k = 0;k < len1;k++)
+//	{
+//		for(int j = 0;j < len2;j++)
+//		{
+//			c[j + k] += a[j]*b[k];
+//		}
+//	}
+//	
+//	int len = len1 + len2;
+//	for(int h = 0;h < len;h++)
+//	{
+//		c[h + 1] += c[h] / 10;
+//		c[h] %= 10;
+//	}
+//	
+//	while(len > 1 && c[len - 1] == 0)
+//	{
+//		len--;
+//	}
+//	
+//	for(int x = 0;x < len;x++)
+//	{
+//		printf("%d",c[len - 1 - x]);
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	char arr[100] = {0};
+//	int j = 0;
+//	while(1)
+//	{
+//		scanf("%c",&arr[j]);
+//		if(arr[j] == '\n') break;
+//		else if(((arr[j] < 'a' && arr[j] > 'Z') || (arr[j] > 'z') || (arr[j] < 'A')) && arr[j] != ' ' ) return 1;
+//		j++;
+//	}
+//	int len = strlen(arr);
+//	if(len > 100) return 1;
+//	
+//	int i = 0,count = 0;
+//	while(arr[i] != '\n')
+//	{
+//		if(arr[i] == ' ' && arr[i + 1] != ' ')
+//		{
+//			count++;
+//		}
+//		i++;
+//	}
+//	
+//	if(arr[i] == '\n' && arr[i - 1] != ' ') count++;
+//	printf("%d",count);
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d",&n);
+//	
+//	while(n--)
+//	{
+//		char arr[100] = {0};
+//		scanf("%s",arr);
+//		int len = strlen(arr);
+//		
+//		int left = 0,right = len - 1;
+//		while(left < right)
+//		{
+//			char temp = '0';
+//			temp = arr[left];
+//			arr[left] = arr[right];
+//			arr[right] = temp;
+//			left++;
+//			right--;
+//		}
+//			
+//		printf("%s\n",arr);
+//	}
+//	return 0;
+//}
